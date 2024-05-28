@@ -1,4 +1,4 @@
-page 50102 "RewardLevel Page"
+page 50102 "RewardLevel CardPage"
 {
     PageType = Card;
     ApplicationArea = All;
