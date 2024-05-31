@@ -2,44 +2,52 @@ enum 50100 AccountType
 {
     Extensible = true;
 
-    value(0; TravelAdvance)
+    value(0; none)
+    {
+        Caption = '';
+    }
+    value(1; TravelAdvance)
     {
         Caption = 'TravelAdvance';
     }
-    value(1; Partner)
+    value(2; Partner)
     {
         Caption = 'Partner';
     }
-    value(2; StaffAdvance)
+    value(3; StaffAdvance)
     {
         Caption = 'StaffAdvance';
     }
-    value(3; Members)
+    value(4; Members)
     {
         Caption = 'Members';
     }
-    value(4; TrainingAdvance)
+    value(5; TrainingAdvance)
     {
         Caption = 'TrainingAdvance';
     }
-    value(5; Employer)
+    value(6; Employer)
     {
         Caption = 'Employer';
     }
-    value(6; CashierExcess)
+    value(7; CashierExcess)
     {
         Caption = 'StaffAdvance';
     }
-    value(7; CashierShortage)
+    value(8; CashierShortage)
     {
         Caption = 'CashierShortage';
     }
-    value(8; MPESA)
+    value(9; MPESA)
     {
         Caption = 'MPESA';
     }
-    value(9; ShopTenant)
+    value(10; Shop)
     {
-        Caption = 'ShopTenant';
+        Caption = 'Shop';
+    }
+    value(11; Tenant)
+    {
+        Caption = 'Tenant';
     }
 }
