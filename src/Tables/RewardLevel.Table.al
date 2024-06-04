@@ -48,25 +48,5 @@ table 50102 rewardLevel
         // Add changes to field groups here
     }
 
-    trigger OnInsert()
-    begin
-        message('Data inserted');
-
-    end;
-
-    trigger OnModify()
-    begin
-        message('Data modified');
-    end;
-
-    trigger OnDelete()
-    begin
-        message('Data deleted');
-    end;
-
-    trigger OnRename()
-    begin
-        message('Data renamed');
-    end;
 
 }

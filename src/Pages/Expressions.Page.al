@@ -24,11 +24,17 @@ page 50104 Expressions
 
                 }
 
+
+            }
+            group(Output)
+            {
+                Caption = 'Output';
                 field(Result; Result)
                 {
                     ApplicationArea = All;
 
                 }
+
             }
         }
     }
@@ -51,6 +57,28 @@ page 50104 Expressions
                 end;
             }
         }
+        area(Navigation)
+        {
+            group("More information")
+            {
+                Caption = 'More Data';
+                group("More details")
+                {
+
+
+                    action(Customer)
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Customer Details';
+                        RunObject = page "Customer Card";
+
+
+                    }
+                }
+            }
+
+        }
+
     }
 
     var
