@@ -32,6 +32,7 @@ page 50104 Expressions
                 field(Result; Result)
                 {
                     ApplicationArea = All;
+                    Editable = false;
 
                 }
 

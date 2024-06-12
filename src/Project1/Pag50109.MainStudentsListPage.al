@@ -1,10 +1,12 @@
-page 50109 MainStudentListPage
+page 50109 MainStudentsListPage
 {
     ApplicationArea = All;
-    Caption = 'MainStudentListPage';
+    Caption = 'MainStudentsListPage';
     PageType = List;
-    SourceTable = TableMainStudent;
+    SourceTable = MainStudents;
     UsageCategory = Lists;
+    CardPageId = MainStudentsCardPage;
+
 
     layout
     {
@@ -12,27 +14,31 @@ page 50109 MainStudentListPage
         {
             repeater(General)
             {
-                field(Course; Rec.Course)
+                field("Student Number"; Rec."Student Number")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Course field.', Comment = '%';
+                    ToolTip = 'Specifies the value of the Application Number field.', Comment = '%';
                 }
+
                 field("Full Name"; Rec."Full Name")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Full Name field.', Comment = '%';
+                }
+                field(Course; Rec.Course)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Course field.', Comment = '%';
                 }
                 field("ID Number"; Rec."ID Number")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the ID Number field.', Comment = '%';
                 }
-                field("Student Number"; Rec."Student Number")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Application Number field.', Comment = '%';
-                }
+
             }
         }
+
     }
+
 }

@@ -6,10 +6,10 @@
             "request": "launch",
             "type": "al",
             "environmentType": "OnPrem",
-            "server": "http://localhost:8080/BC230",
-            "serverInstance": "BC230",
+            "server":"http://localhost:8080/Peter230BC/",
+            "serverInstance": "PETER230",
             "authentication": "Windows",
-            "startupObjectId": 22,
+            "startupObjectId": 50102,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
@@ -18,7 +18,7 @@
             "enableSqlInformationDebugger": true,
             "tenant": "default",
             "usePublicURLFromServer": true,
-            "port":7049
+            "port":7449
         }
     ]
 }

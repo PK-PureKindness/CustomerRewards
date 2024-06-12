@@ -1,9 +1,10 @@
-page 50108 StudentRegistrationListPage
+page 50108 StudentsApplicationListPage
 {
     ApplicationArea = All;
-    Caption = 'StudentRegistrationListPage';
+    Caption = 'StudentsApplicationListPage';
     PageType = List;
-    SourceTable = TableStudentRegistration;
+    SourceTable = StudentsApplicationTable;
+    CardPageId = StudentApplicationCardPage;
     UsageCategory = Lists;
 
     layout

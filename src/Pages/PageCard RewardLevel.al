@@ -2,7 +2,6 @@ page 50102 "RewardLevel CardPage"
 {
     PageType = Card;
     ApplicationArea = All;
-    UsageCategory = Administration;
     SourceTable = RewardLevel;
 
     layout

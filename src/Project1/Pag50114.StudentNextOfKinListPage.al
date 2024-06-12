@@ -1,11 +1,11 @@
-page 50110 NextOfKinListPage
+page 50114 StudentNextOfKinListPage
 {
     ApplicationArea = All;
-    Caption = 'NextOfKinListPage';
+    Caption = 'StudentNextOfKinListPage';
     PageType = List;
     SourceTable = NextOfKins;
     UsageCategory = Lists;
-    CardPageId = NextOfKinCardPage;
+    Editable = false;
 
     layout
     {
@@ -17,7 +17,6 @@ page 50110 NextOfKinListPage
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Student  Number field.', Comment = '%';
-                    Editable = false;
                 }
                 field("ID Number"; Rec."ID Number")
                 {
