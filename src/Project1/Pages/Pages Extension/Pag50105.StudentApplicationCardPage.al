@@ -101,6 +101,19 @@ page 50105 StudentApplicationCardPage
                     ToolTip = 'Specifies the value of the Phone Number field.', Comment = '%';
                     Editable = EditApplication;
                 }
+                field("Current Year Of Study"; Rec."Current Year Of Study")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Current Year Of Study field.', Comment = '%';
+                    Editable = EditApplication;
+                }
+                field("Current Semester Of Study"; Rec."Current Semester Of Study")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Current Semester Of Study field.', Comment = '%';
+                    Editable = EditApplication;
+
+                }
                 field("Home County"; Rec."Home County")
                 {
                     ApplicationArea = All;
@@ -122,6 +135,7 @@ page 50105 StudentApplicationCardPage
 
 
             }
+
         }
     }
     actions
@@ -191,6 +205,8 @@ page 50105 StudentApplicationCardPage
         Student."Date Of Birth" := Rec."Date Of Birth";
         Student.Age := Rec.Age;
         Student."Home County" := Rec."Home County";
+        Student."Current Year Of Study" := Rec."Current Year Of Study";
+        Student."Current Semester Of Study" := Rec."Current Semester Of Study";
         Student.Insert(true);
         Rec.Created := true;
 

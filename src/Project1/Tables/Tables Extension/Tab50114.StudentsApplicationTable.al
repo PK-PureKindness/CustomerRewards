@@ -5,8 +5,6 @@ table 50114 StudentsApplicationTable
 
     fields
     {
-
-
         field(1; "Application Number"; Code[50])
         {
             Caption = 'Application Number';
@@ -124,6 +122,18 @@ table 50114 StudentsApplicationTable
         {
             Caption = 'Created';
             DataClassification = ToBeClassified;
+        }
+        field(17; "Current Year Of Study"; Integer)
+        {
+            Caption = 'Current Year Of Study';
+            DataClassification = ToBeClassified;
+            TableRelation = "Academic Year";
+        }
+        field(18; "Current Semester Of Study"; Integer)
+        {
+            Caption = 'Current Semester Of Study';
+            DataClassification = ToBeClassified;
+            TableRelation = "Academic Semester";
         }
     }
     keys

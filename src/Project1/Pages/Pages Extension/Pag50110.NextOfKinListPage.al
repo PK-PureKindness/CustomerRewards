@@ -13,10 +13,10 @@ page 50110 NextOfKinListPage
         {
             repeater(General)
             {
-                field("Student  Number"; Rec."Student  Number")
+                field("Applicant Number"; Rec."Student  Number")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Student  Number field.', Comment = '%';
+                    ToolTip = 'Specifies the value of the Applicant Number field.', Comment = '%';
                     Editable = false;
                 }
                 field("ID Number"; Rec."ID Number")

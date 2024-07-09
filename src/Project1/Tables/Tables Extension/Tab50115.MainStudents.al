@@ -9,7 +9,6 @@ table 50115 MainStudents
         {
             Caption = 'Student Number';
         }
-
         field(2; "ID Number"; Code[50])
         {
             Caption = 'ID Number';
@@ -80,6 +79,30 @@ table 50115 MainStudents
         {
             Caption = 'Date Of Birth';
             DataClassification = ToBeClassified;
+        }
+        field(16; "Current Year Of Study"; Integer)
+        {
+            Caption = 'Current Year Of Study';
+            DataClassification = ToBeClassified;
+        }
+        field(17; "Current Semester Of Study"; Integer)
+        {
+            Caption = 'Current Semester Of Study';
+            DataClassification = ToBeClassified;
+        }
+        field(18; "No. of Students"; Integer)
+        {
+            DataClassification = ToBeClassified;
+            /* Caption = 'No. Of Students';
+             FieldClass = FlowField;
+             CalcFormula = count(MainStudents); */
+
+        }
+        field(19; "Number Of Students"; Integer)
+        {
+            Caption = 'No. Of Students';
+            FieldClass = FlowField;
+            CalcFormula = count(MainStudents);
         }
     }
     keys

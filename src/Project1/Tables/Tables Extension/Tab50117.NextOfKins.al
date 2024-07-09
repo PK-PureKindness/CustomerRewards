@@ -7,7 +7,7 @@ table 50117 NextOfKins
     {
         field(1; "Student  Number"; Code[50])
         {
-            Caption = 'Student  Number';
+            Caption = 'Student Number';
         }
         field(2; "First Name"; Text[30])
         {

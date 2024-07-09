@@ -5,13 +5,17 @@ page 50111 CoursesOfferedList
     PageType = List;
     SourceTable = CoursesOffered;
     UsageCategory = Lists;
-    
+
     layout
     {
         area(Content)
         {
             repeater(General)
             {
+                field("Student Number"; Rec."Student Number")
+                {
+                    ToolTip = 'Specifies the value of the Student Number field.', Comment = '%';
+                }
                 field("Course Code"; Rec."Course Code")
                 {
                     ToolTip = 'Specifies the value of the Course Code field.', Comment = '%';
