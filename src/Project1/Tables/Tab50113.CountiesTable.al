@@ -2,7 +2,7 @@ table 50113 CountiesTable
 {
     Caption = 'CountiesTable';
     DataClassification = ToBeClassified;
-    
+
     fields
     {
         field(1; "County Code"; Code[100])
@@ -16,7 +16,7 @@ table 50113 CountiesTable
     }
     keys
     {
-        key(PK; "County Code")
+        key(PK; "County Code", "County Name")
         {
             Clustered = true;
         }

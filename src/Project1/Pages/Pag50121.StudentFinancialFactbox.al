@@ -23,6 +23,11 @@ page 50121 "Student Financial Factbox"
 
                     end;
                 }
+                field("ID NO."; Rec."ID NO.")
+                {
+                    ToolTip = 'Specifies the value of the Student ID field.', Comment = '%';
+                    Editable = false;
+                }
                 field(StudName; StudName)
                 {
                     Caption = 'Student Name';

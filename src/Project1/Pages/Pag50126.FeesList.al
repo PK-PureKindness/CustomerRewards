@@ -17,6 +17,11 @@ page 50126 "Fees List"
                     ToolTip = 'Specifies the value of the Student  Number field.', Comment = '%';
                     Editable = false;
                 }
+                field("ID NO."; Rec."ID NO.")
+                {
+                    ToolTip = 'Specifies the value of the Student ID field.', Comment = '%';
+                    Editable = false;
+                }
                 field("Current Semester Fee Payable "; Rec."Current Semester Fee Payable ")
                 {
                     ToolTip = 'Specifies the value of the Current Semester Fee Payable field.', Comment = '%';

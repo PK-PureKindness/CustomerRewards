@@ -86,9 +86,5 @@ page 50117 "Units List Page"
         //Message('Student Number: %1', Rec."Student Number");
     end;
 
-
-
-    var
-        unit: Record Unit;
 }
 

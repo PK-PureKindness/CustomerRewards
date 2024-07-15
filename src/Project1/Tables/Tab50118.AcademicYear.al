@@ -32,17 +32,10 @@ table 50118 "Academic Year"
     }
     keys
     {
-        key(Key1; Year, "Course Code")
+        key(Key1; Year, "Course Code", "Student Number")
         {
             Clustered = true;
         }
-        key(Key2; "Student Number")
-        {
 
-        }
-        key(Key3; "Year Name")
-        {
-
-        }
     }
 }

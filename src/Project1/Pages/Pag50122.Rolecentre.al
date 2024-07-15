@@ -9,21 +9,15 @@ page 50122 "Student Role Centre"
     {
         area(RoleCenter)
         {
-            group(Group1)
-            {
-                part(StudentHeadline; "Headline RC Student")
-                {
-                    ApplicationArea = all;
-                }
-            }
-            group(Student)
-            {
-                part("Student Activities"; "Student History")
-                {
-                    ApplicationArea = all;
-                }
-            }
 
+            part(StudentHeadline; "Headline RC Student")
+            {
+                ApplicationArea = all;
+            }
+            part("Student Activities"; "Student History")
+            {
+                ApplicationArea = all;
+            }
         }
     }
 
@@ -111,6 +105,12 @@ page 50122 "Student Role Centre"
         }
         area(Embedding)
         {
+            action(StudentChanges)
+            {
+                Caption = 'Student changes List';
+                ApplicationArea = all;
+                RunObject = Page "MainStudent Changes List Page";
+            }
 
         }
         /* area()

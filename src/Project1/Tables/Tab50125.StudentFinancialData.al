@@ -42,10 +42,14 @@ table 50125 "Student Financial Data"
             FieldClass = FlowField;
             CalcFormula = count(StudentsApplicationTable);
         }
+        field(8; "ID NO."; Code[50])
+        {
+            Caption = 'Student  ID';
+        }
     }
     keys
     {
-        key(PK; "Student  Number")
+        key(PK; "Student  Number", "ID NO.")
         {
             Clustered = true;
         }

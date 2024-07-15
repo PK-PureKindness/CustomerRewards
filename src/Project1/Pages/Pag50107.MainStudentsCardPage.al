@@ -173,15 +173,24 @@ page 50107 MainStudentsCardPage
                 RunObject = page "Fees Statement List";
                 RunPageLink = "Student Number" = field("Student Number");
             }
-            action("Factbox")
+            action("Student Changes")
             {
                 ApplicationArea = All;
                 Image = GetEntries;
                 Promoted = true;
                 PromotedCategory = Process;
-                RunObject = page "Student Financial Factbox";
-                RunPageLink = "Student  Number" = field("Student Number");
+                RunObject = page "MainStudents Changes CardPage";
+                RunPageLink = "Student Number" = field("Student Number");
             }
+            /* action("Factbox")
+             {
+                 ApplicationArea = All;
+                 Image = GetEntries;
+                 Promoted = true;
+                 PromotedCategory = Process;
+                 RunObject = page "Student Financial Factbox";
+                 RunPageLink = "Student  Number" = field("Student Number");
+             } */
         }
     }
     var

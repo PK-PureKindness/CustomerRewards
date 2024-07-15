@@ -8,12 +8,7 @@ table 50119 "Academic Semester"
         field(1; Semester; Integer)
         {
             Caption = 'Semester';
-            trigger OnValidate()
-            var
-                myInt: Integer;
-            begin
 
-            end;
         }
         field(2; Year; Integer)
         {
@@ -70,22 +65,11 @@ table 50119 "Academic Semester"
     }
     keys
     {
-        key(Key1; Semester, Year)
+        key(Key1; Semester, Year, "Student Number")
         {
             Clustered = true;
         }
-        key(Key2; "Student Number")
-        {
 
-        }
-        key(Key3; "Course Code")
-        {
-
-        }
-
-        key(Key4; "Semester Code")
-        {
-        }
     }
     var
         AcaSem: Record "Academic Semester";
