@@ -68,7 +68,7 @@ page 50122 "Student Role Centre"
                 {
                     Caption = 'Courses Offered List';
                     ApplicationArea = all;
-                    RunObject = Page CountiesList;
+                    RunObject = Page CoursesOfferedList;
                 }
                 action(Units)
                 {
