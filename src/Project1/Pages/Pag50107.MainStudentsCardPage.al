@@ -173,6 +173,16 @@ page 50107 MainStudentsCardPage
                 RunObject = page "Fees Statement List";
                 RunPageLink = "Student Number" = field("Student Number");
             }
+            action(Payments)
+            {
+                ApplicationArea = All;
+                Image = GetEntries;
+                Promoted = true;
+                PromotedCategory = Process;
+                RunObject = page "Receipt Card";
+                RunPageLink = "Student No." = field("Student Number");
+
+            }
             action("Student Changes")
             {
                 ApplicationArea = All;
@@ -191,6 +201,7 @@ page 50107 MainStudentsCardPage
                  RunObject = page "Student Financial Factbox";
                  RunPageLink = "Student  Number" = field("Student Number");
              } */
+
         }
     }
     var
