@@ -4,6 +4,7 @@ page 50131 "Receipt Card"
     Caption = 'Receipt Card';
     PageType = Card;
     SourceTable = "Receipt Table";
+    //RefreshOnActivate = true;
 
     layout
     {
@@ -18,9 +19,9 @@ page 50131 "Receipt Card"
                     ToolTip = 'Specifies the value of the Student No. field.', Comment = '%';
                     Editable = false;
                 }
-                field("Receipt No."; Rec."Receipt No.")
+                field("Receipt Number"; Rec."Receipt Number")
                 {
-                    ToolTip = 'Specifies the value of the Receipt No. field.', Comment = '%';
+                    ToolTip = 'Specifies the value of the Receipt Number field.', Comment = '%';
                 }
                 field("Receipt Date"; Rec."Receipt Date")
                 {
@@ -60,7 +61,7 @@ page 50131 "Receipt Card"
                 part(ReceiptLine; "Receipt Line ListPart")
                 {
                     ApplicationArea = All;
-                    SubPageLink = "Receipt No." = field("Receipt No.");
+                    SubPageLink = "Receipt Number" = field("Receipt Number");
                 }
 
             }

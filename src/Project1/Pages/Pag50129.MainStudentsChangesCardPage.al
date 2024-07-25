@@ -48,6 +48,10 @@ page 50129 "MainStudents Changes CardPage"
                 {
                     ToolTip = 'Specifies the value of the New First Name field.', Comment = '%';
                     ApplicationArea = All;
+                    trigger OnValidate()
+                    begin
+                        UpdateNames();
+                    end;
                 }
                 field("Middle Name"; Rec."Middle Name")
                 {
@@ -59,6 +63,10 @@ page 50129 "MainStudents Changes CardPage"
                 {
                     ToolTip = 'Specifies the value of the New Middle Name field.', Comment = '%';
                     ApplicationArea = All;
+                    trigger OnValidate()
+                    begin
+                        UpdateNames();
+                    end;
                 }
                 field("Sur Name"; Rec."Sur Name")
                 {
@@ -70,6 +78,10 @@ page 50129 "MainStudents Changes CardPage"
                 {
                     ToolTip = 'Specifies the value of the New Sur Name field.', Comment = '%';
                     ApplicationArea = All;
+                    trigger OnValidate()
+                    begin
+                        UpdateNames();
+                    end;
                 }
                 field("Full Name"; Rec."Full Name")
                 {
@@ -211,6 +223,39 @@ page 50129 "MainStudents Changes CardPage"
         }
 
     }
+    actions
+    {
+        area(Processing)
+        {
+            action(UpdateStudentDetails)
+            {
+                Caption = 'Update Student Details';
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                trigger OnAction()
+                var
+                    myInt: Integer;
+                begin
+                    Rec.Validate("Student Number");
+                end;
+            }
+        }
+    }
+    local procedure UpdateNames()
+    begin
+        Rec."New Full Name" := '';
+        if (Rec."New First name" <> '') then
+            Rec."New Full Name" += Rec."New First Name";
+
+        if (Rec."New Middle Name" <> '') then
+            Rec."New Full Name" += ' ' + Rec."New Middle Name";
+
+        if (Rec."Sur Name" <> '') then
+            Rec."New Full Name" += ' ' + Rec."New Sur Name";
+
+    end;
+
     var
         GenVis: Boolean;
         CommVis: Boolean;

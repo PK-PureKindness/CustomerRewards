@@ -11,6 +11,12 @@ pageextension 50101 "sales & Receivables Setup" extends "Sales & Receivables Set
                     TableRelation = "No. Series";
 
                 }
+                field("Student Receipt No."; Rec."Student Receipt No.")
+                {
+                    TableRelation = "No. Series";
+
+                }
+
             }
         }
     }

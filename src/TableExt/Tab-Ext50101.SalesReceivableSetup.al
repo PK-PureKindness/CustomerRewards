@@ -7,5 +7,11 @@ tableextension 50101 "Sales & Receivable Setup" extends "Sales & Receivables Set
             Caption = 'Student Change No.';
             DataClassification = ToBeClassified;
         }
+        field(50101; "Student Receipt No."; Code[50])
+        {
+            Caption = 'Student Receipt No.';
+            DataClassification = ToBeClassified;
+        }
+
     }
 }

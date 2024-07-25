@@ -5,9 +5,9 @@ table 50130 "Receipt Line Table"
 
     fields
     {
-        field(1; "Receipt No."; Code[20])
+        field(1; "Receipt Number"; Code[20])
         {
-            Caption = 'Receipt No.';
+            Caption = 'Receipt Number';
         }
         field(2; "Receipt Type"; Text[50])
         {
@@ -28,7 +28,7 @@ table 50130 "Receipt Line Table"
     }
     keys
     {
-        key(PK; "Receipt No.", "Receipt Type")
+        key(PK; "Student No.", "Receipt Number", "Receipt Type")
         {
             Clustered = true;
         }

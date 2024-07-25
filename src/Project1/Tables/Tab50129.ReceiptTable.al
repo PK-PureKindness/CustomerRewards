@@ -5,9 +5,20 @@ table 50129 "Receipt Table"
 
     fields
     {
-        field(1; "Receipt No."; Code[20])
+        field(1; "Receipt Number"; Code[50])
         {
-            Caption = 'Receipt No.';
+            Caption = 'Receipt Number';
+            trigger OnValidate()
+            begin
+                if "Receipt Number" <> xRec."Receipt Number" then begin
+
+                    NSetup.Get;
+                    NoSeriesMgt.TestManual(NSetup."Student Change No.");
+
+
+                    "No. Series" := '';
+                end;
+            end;
         }
         field(2; "Document Date"; Date)
         {
@@ -15,7 +26,7 @@ table 50129 "Receipt Table"
         }
         field(3; "Student No."; Code[20])
         {
-            Caption = 'Student No.';
+            Caption = 'Student Number';
         }
         field(4; "Received Bank"; Code[20])
         {
@@ -46,17 +57,31 @@ table 50129 "Receipt Table"
         {
             Caption = 'Posted By';
         }
+        field(11; "No. Series"; code[100])
+        {
+            Caption = 'No. Series';
+            TableRelation = "No. Series";
+        }
     }
     keys
     {
-        key(PK; "Receipt No.", "Student No.")
+        key(PK; "Receipt Number", "Student No.")
         {
             Clustered = true;
         }
     }
 
+    var
+        NoseriesMgt: Codeunit NoSeriesManagement;
+        NSetup: record "Sales & Receivables Setup";
+
+
     trigger OnInsert()
     begin
+        if rec."Receipt Number" = '' then begin
+            NoseriesMgt.InitSeries('RECEIPT', xRec."No. Series", 0D, "Receipt Number", "No. Series");
+        end;
+
         "Document Date" := Today;
         //"Receipt Date" := Today;
         "Received By" := UserId;

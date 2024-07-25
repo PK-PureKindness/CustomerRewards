@@ -32,6 +32,20 @@ table 50128 "MainStudents Changes"
         {
             Caption = 'New ID Number';
             DataClassification = ToBeClassified;
+            trigger OnValidate()
+            var
+                TestID: Code[20];
+            begin
+                if "New ID Number" <> '' then begin
+                    if StrLen("New ID Number") < 6 then
+                        Error('Invalid ID Number.');
+
+                    TestID := DelChr("New ID Number", '=', 'A|B|C|D|E|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|.|,|!|@|#|$|%|^|&|*|(|)|[|]|{|}|/|\|"|;|:|<|>|?|-|_');
+                    if TestID <> "New ID Number" then
+                        Error('Invalid ID Number. Invalid Character detected');
+
+                end;
+            end;
         }
         field(4; "First Name"; Text[30])
         {
@@ -114,6 +128,20 @@ table 50128 "MainStudents Changes"
         {
             Caption = 'New Phone Number';
             DataClassification = ToBeClassified;
+            trigger OnValidate()
+            var
+                TestID: Code[20];
+            begin
+                if "New Phone Number" <> '' then begin
+                    if StrLen("New Phone Number") < 6 then
+                        Error('Invalid phone No.');
+
+                    TestID := DelChr("New Phone Number", '=', 'A|B|C|D|E|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z|.|,|!|@|#|$|%|^|&|*|(|)|[|]|{|}|/|\|"|;|:|<|>|?|-|_');
+                    if TestID <> "New Phone Number" then
+                        Error('Invalid Phone number. Invalid Character detected');
+
+                end;
+            end;
         }
         field(20; "Email Address"; Code[50])
         {
@@ -161,6 +189,11 @@ table 50128 "MainStudents Changes"
         {
             Caption = 'New Date Of Birth';
             DataClassification = ToBeClassified;
+            trigger OnValidate()
+            begin
+                if "New Date Of Birth" <> 0D then
+                    "New Age" := Date2DMY(Today, 3) - Date2DMY("New Date Of Birth", 3)
+            end;
         }
         field(29; "Current Year Of Study"; Integer)
         {
@@ -186,6 +219,29 @@ table 50128 "MainStudents Changes"
         {
             Caption = 'Student Number';
             DataClassification = ToBeClassified;
+
+            trigger OnValidate()
+            var
+                myInt: Integer;
+            begin
+                student.Reset();
+                student.SetRange("Student Number", "Student Number");
+                if student.FindFirst() then begin
+                    "First Name" := student."First Name";
+                    "Middle Name" := student."Middle Name";
+                    "Sur Name" := student."Sur Name";
+                    "Full Name" := student."Full Name";
+                    "Home County" := student."Home County";
+                    "Email Address" := student."Email Address";
+                    "Date Of Birth" := student."Date Of Birth";
+                    Age := student.Age;
+                    "Phone Number" := student."Phone Number";
+                    "ID Number" := student."ID Number";
+                    Course := student.Course;
+                    "Current Year Of Study" := student."Current Year Of Study";
+                    "Current Semester Of Study" := student."Current Semester Of Study";
+                end;
+            end;
 
         }
         field(34; "Posted"; Boolean)
@@ -222,6 +278,8 @@ table 50128 "MainStudents Changes"
     var
         NoseriesMgt: Codeunit NoSeriesManagement;
         NSetup: record "Sales & Receivables Setup";
+        student: Record MainStudents;
+
 
     trigger OnInsert()
     begin

@@ -17,9 +17,9 @@ page 50133 "Receipt List"
                 {
                     ToolTip = 'Specifies the value of the Student No. field.', Comment = '%';
                 }
-                field("Receipt No."; Rec."Receipt No.")
+                field("Receipt Number"; Rec."Receipt Number")
                 {
-                    ToolTip = 'Specifies the value of the Receipt No. field.', Comment = '%';
+                    ToolTip = 'Specifies the value of the Receipt Number field.', Comment = '%';
                 }
                 field("Received Amount"; Rec."Received Amount")
                 {
